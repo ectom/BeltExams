@@ -1,0 +1,13 @@
+<div>
+    <h3>Put your question and options here:</h3>
+
+    <p><a [routerLink]='["/dashboard"]'>Cancel</a></p>
+    <form #form='ngForm'>
+        <p><label>Question:</label><input type="text" name="question" value="" required minlength='8' #question='ngModel' [(ngModel)]='poll.question'></p>
+        <p><label>Option 1:</label><input type="text" name="option1Name" value="" required minlength='3' #option1Name='ngModel' [(ngModel)]='poll.option1Name'></p>
+        <p><label>Option 2:</label><input type="text" name="option2Name" value="" required minlength='3' #option2Name='ngModel' [(ngModel)]='poll.option2Name'></p>
+        <p><label>Option 3:</label><input type="text" name="option3Name" value=""required minlength='3' #option3Name='ngModel' [(ngModel)]='poll.option3Name'></p>
+        <p><label>Option 4:</label><input type="text" name="option4Name" value="" required minlength='3' #option4Name='ngModel' [(ngModel)]='poll.option4Name'></p>
+        <p><button [routerLink]='["/dashboard"]' (click)='onSubmit()' type="submit" name="button" [disabled]='!form.valid'>Create Poll</button></p>
+    </form>
+</div>

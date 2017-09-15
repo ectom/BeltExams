@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pokes</title>
+        {% load static %}
+        <link href="{% static 'poke/css/pokes.css' %}" rel='stylesheet'>
+    </head>
+    <body>
+        <a class='logout' href="/logout">Logout</a>
+        <h1>Welcome, {{request.session.name}}!</h1>
+        <p>people poked you!</p>
+        <textarea name="name" rows="8" cols="80">
+            
+        </textarea>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Alias</th>
+                <th>Email</th>
+                <th>Poke History</th>
+                <th>Action</th>
+            </tr>
+            {% for user in pokers %}
+            <tr>
+                <th>{{user.name}}</th>
+                <th>{{user.alias}}</th>
+                <th>{{user.email}}</th>
+                <th>{{user.poke_history}}</th>
+                <th><a href="/action/{{user.id}}">Poke!</a></th>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

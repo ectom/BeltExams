@@ -1,0 +1,7 @@
+<div>
+    <h1>Q&A</h1>
+    <form #form='ngForm'>
+        <p><label>Name:</label> <input type="text" name="name" minlength='2' [(ngModel)]='user.name' #name='ngModel' required> {{name.errors | json}}</p>
+        <p><button [routerLink]='["/dashboard"]' (click)='onClick()' type="submit" name="button" [disabled]='!form.valid'>Enter</button></p>
+    </form>
+</div>

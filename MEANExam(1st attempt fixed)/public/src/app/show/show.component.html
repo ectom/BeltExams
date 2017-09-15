@@ -1,0 +1,18 @@
+<div class="">
+    <p>
+        <a [routerLink]='["/dashboard"]'>Home</a> |
+        <a [routerLink]='["/answer", question._id]'>Answer this Question</a> |
+        <a [routerLink]='[""]'>Logout</a>
+    </p>
+    <h1>{{question.text}}</h1>
+    <p *ngIf='question.desc'>{{question.desc}}</p>
+    {{question | json}}
+    {{answers | json}}
+    <div *ngFor='let answer of answers'>
+        <p>{{answer.user}}</p>
+        <p>{{answer.text}}</p>
+        <p *ngIf='answer.details'>{{answer.details}}</p>
+        <p>{{answer.likes}} likes <button type="button" name="button">Like!</button></p>
+
+    </div>
+</div>

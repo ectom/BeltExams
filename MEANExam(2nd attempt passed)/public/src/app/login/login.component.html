@@ -1,0 +1,7 @@
+<div>
+	<h1>Survey</h1>
+	<form #form='ngForm'>
+		<p>Name: <input type="text" name="name" required minlength="2" [(ngModel)]="user.name" #name='ngModel'></p>
+        <p><button [routerLink]="['/dashboard']" [disabled]="!form.valid" (click)="onClick()" type="submit" name="button">Login</button></p>
+	</form>
+</div>

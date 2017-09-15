@@ -1,0 +1,15 @@
+<div class="">
+    <p>
+        <a [routerLink]='["/dashboard"]'>Home</a> |
+        <a [routerLink]='["/show", question._id]'>Go Back to Question</a> |
+        <a [routerLink]='[""]'>Logout</a>
+    </p>
+    <h1>{{question.text}}</h1>
+    <p>{{question.desc}}</p>
+    <form #form='ngForm'>
+        <p><label>Your Answer:</label><textarea name="text" rows="8" cols="80" required minlength='5' #text='ngModel' [(ngModel)]='answer.text'></textarea><span *ngIf='text.errors'>Needs to be at least 5 characters</span></p>
+        <p><label>Details:</label><textarea name="details" rows="8" cols="80" [(ngModel)]='answer.details' #details='ngModel'></textarea></p>
+        <button [routerLink]='["/dashboard"]' type="submit" name="button">Cancel</button>
+        <button [routerLink]='["/dashboard"]' (click)='onSubmit()' [disabled]='!form.valid' type="submit" name="button">Submit</button>
+    </form>
+</div>

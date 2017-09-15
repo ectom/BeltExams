@@ -1,0 +1,6 @@
+<h1>Q&A</h1>
+
+<form #myForm='ngForm'>
+    <p><label>Name:</label><input type="text" name="name" value="" required [(ngModel)]='name'></p>
+    <button [routerLink]="['dashboard']" type="submit" name="button" [disabled]='!myForm.valid'>Enter</button>
+</form>

@@ -1,0 +1,10 @@
+<a [routerLink]='["/dashboard"]'>Home</a> | <a [routerLink]='["/show/:id"]'>Go Back to Question</a> <a [routerLink]='["/"]'>Logout</a>
+<h1>{{question.thequestion}}</h1>
+<p>{{question.description}}</p>
+
+<div *ngFor='let ans of question.answers'>
+    <p>{{answer.name}}</p>
+    <p>{{answer.theanswer}}</p>
+    <p *ngIf='answer.description'>{{answer.description}}</p>
+    <p>{{answer.likes}} likes <button (click)='like()' type="button" name="button">Like!</button></p>
+</div>

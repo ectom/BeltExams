@@ -1,0 +1,9 @@
+<a [routerLink]='["/dashboard"]'>Home</a>
+<a [routerLink]='["/"]'>Logout</a>
+<h1>New Question</h1>
+<form #form='ngForm'>
+    <p><label>Question</label><textarea name="question" rows="8" cols="80" required></textarea></p>
+    <p><label>Description (optional)</label><textarea name="description" rows="8" cols="80"></textarea></p>
+    <button type="submit" name="button" [routerLink]='["/dashboard"]' (click)='newQuestion()'[disabled]='!form.valid'>Sumbit</button>
+    <button type="buttom" name="button" [routerLink]='["/dashboard"]'>Cancel</button>
+</form>
